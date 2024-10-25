@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Clock</title>
+    <style>
+        body{
+            background: url('https://image.freepik.com/free-vector/wood-background-realistic_107791-102.jpg?1');
+        }
+        div{
+            z-index: 1;
+            position: relative;
+            top: 50px;
+            left: 30%;
+            width: 600px;
+            height: 500px;
+            text-align: center;
+            /* color: white; */
+            font-family: sans-serif;
+            font-size: 50px;
+            box-shadow: 7px 7px 5px black;
+            background: url('https://image.freepik.com/free-vector/wood-background-realistic_107791-102.jpg?1');
+        }
+        p{
+            font-size: 70px;
+            position: sticky;
+            font-weight: 1000;
+        }
+        #btn1, #btn2{
+            display: block;
+            color: white;
+            background-color: cornflowerblue;
+            width: 150px;
+            height: 40px;
+            position: relative;
+            top: 0px;
+            left: 38%;
+            border-radius: 7px;
+            box-shadow: 7px 7px 7px black;
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        h1{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Counter</h1>
+        <p id="para" style="display: none;" >0</p>
+        <button id="btn1">Add Count</button>
+        <button id="btn2">Lower Count</button>
+    </div>
+
+
+    <script>
+        const para= document.getElementById("para")
+        const btn1= document.getElementById("btn1")
+        const btn2= document.getElementById("btn2")
+
+        para.style.display="block"
+        function numberCounter(){
+            if(para.innerText>0){
+                para.style.color="green"
+            }
+            else if(para.innerText<0){
+                para.style.color="red"
+            }
+            else if(para.innerText==0){
+                para.style.color="purple"
+            }
+        }
+        btn1.addEventListener("click", function(){
+            para.innerText=Number(para.innerText)+ Number(1)
+            numberCounter()
+        })
+        btn2.addEventListener("click", function(){
+            para.innerText= Number(para.innerText)- Number(1)
+            numberCounter()
+        })
+    </script>
+    
+</body>
+</html>
